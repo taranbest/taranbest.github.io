@@ -11,14 +11,14 @@
   
   <style>
     :root {
-      --bg-color: #06120e;
-      --card-bg: rgba(14, 28, 23, 0.75);
-      --accent-color: #10b981;
-      --accent-hover: #34d399;
-      --accent-glow: rgba(16, 185, 129, 0.35);
-      --text-main: #ecfdf5;
-      --text-muted: #80a89a;
-      --border-color: rgba(16, 185, 129, 0.18);
+      --bg-color: #0f172a;           /* Rich Slate Charcoal */
+      --card-bg: #1e293b;         /* Lighter Card Surface */
+      --accent-color: #38bdf8;     /* Sky Blue Accent */
+      --accent-hover: #0284c7;     
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --text-main: #f8fafc;        /* High Contrast Light Text */
+      --text-muted: #94a3b8;      /* Soft Muted Gray */
+      --border-color: #334155;    /* Subtle Slate Border */
     }
 
     * {
@@ -31,28 +31,25 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg-color);
       background-image: 
-        radial-gradient(at 10% 10%, rgba(16, 185, 129, 0.18) 0px, transparent 50%),
-        radial-gradient(at 90% 90%, rgba(5, 150, 105, 0.12) 0px, transparent 50%);
+        radial-gradient(at 10% 10%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, rgba(30, 41, 59, 0.5) 0px, transparent 50%);
       color: var(--text-main);
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
-      -webkit-font-smoothing: antialiased; /* Crisper text rendering */
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
       width: 100%;
       max-width: 600px;
       background: var(--card-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--border-color);
       border-radius: 20px;
       padding: 40px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
-                  0 0 30px rgba(16, 185, 129, 0.05);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
     }
 
     header {
@@ -64,8 +61,8 @@
       width: 96px;
       height: 96px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #059669, #34d399);
-      color: #042f2e;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -73,7 +70,7 @@
       font-size: 32px;
       font-weight: 800;
       margin: 0 auto 20px auto;
-      box-shadow: 0 0 25px var(--accent-glow);
+      box-shadow: 0 0 20px var(--accent-glow);
     }
 
     h1 {
@@ -82,18 +79,36 @@
       font-weight: 800;
       letter-spacing: -0.5px;
       margin-bottom: 6px;
-      background: linear-gradient(180deg, #ffffff 0%, #a7f3d0 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffffff;
     }
 
     .subtitle {
       font-family: 'Inter', sans-serif;
       font-size: 14px;
-      color: var(--accent-hover);
+      color: var(--accent-color);
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 2.5px;
+      margin-bottom: 12px;
+    }
+
+    .location {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    .location-icon {
+      width: 14px;
+      height: 14px;
+      fill: var(--accent-color);
     }
 
     .section-title {
@@ -116,18 +131,18 @@
       align-items: center;
       justify-content: space-between;
       padding: 16px 22px;
-      background: rgba(20, 45, 36, 0.4);
+      background: rgba(15, 23, 42, 0.6);
       border: 1px solid var(--border-color);
       border-radius: 12px;
       color: var(--text-main);
       text-decoration: none;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.25s ease;
     }
 
     .btn-link:hover {
       background: var(--accent-color);
-      border-color: var(--accent-hover);
-      color: #042f2e;
+      border-color: var(--accent-color);
+      color: #0f172a;
       transform: translateY(-2px);
       box-shadow: 0 8px 20px var(--accent-glow);
     }
@@ -151,7 +166,7 @@
     }
 
     .btn-link:hover .link-info {
-      color: rgba(4, 47, 46, 0.85);
+      color: #0f172a;
     }
 
     .btn-link .arrow {
@@ -189,6 +204,12 @@
       <div class="avatar-placeholder">TB</div>
       <h1>Taran Best</h1>
       <div class="subtitle">IT Professional</div>
+      <div class="location">
+        <svg class="location-icon" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        Oklahoma City, OK
+      </div>
     </header>
 
     <main>
