@@ -1,28 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            color: white;
-            font-size: 4rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taran Best | IT Professional</title>
+  <!-- Modern Tech Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-color: #06120e;
+      --card-bg: rgba(14, 28, 23, 0.75);
+      --accent-color: #10b981;
+      --accent-hover: #34d399;
+      --accent-glow: rgba(16, 185, 129, 0.35);
+      --text-main: #ecfdf5;
+      --text-muted: #80a89a;
+      --border-color: rgba(16, 185, 129, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      background-image: 
+        radial-gradient(at 10% 10%, rgba(16, 185, 129, 0.18) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, rgba(5, 150, 105, 0.12) 0px, transparent 50%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
+                  0 0 30px rgba(16, 185, 129, 0.05);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .avatar-placeholder {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #059669, #34d399);
+      color: #042f2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      margin: 0 auto 20px auto;
+      box-shadow: 0 0 25px var(--accent-glow);
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 6px;
+      background: linear-gradient(180deg, #ffffff 0%, #a7f3d0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      color: var(--accent-hover);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .btn-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 22px;
+      background: rgba(20, 45, 36, 0.4);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-link:hover {
+      background: var(--accent-color);
+      border-color: var(--accent-hover);
+      color: #042f2e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px var(--accent-glow);
+    }
+
+    .btn-link .link-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .btn-link .link-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .btn-link .link-info {
+      font-size: 13px;
+      color: var(--text-muted);
+      transition: color 0.25s ease;
+    }
+
+    .btn-link:hover .link-info {
+      color: rgba(4, 47, 46, 0.85);
+    }
+
+    .btn-link .arrow {
+      font-size: 18px;
+      transition: transform 0.25s ease;
+    }
+
+    .btn-link:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 36px;
+      font-size: 13px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 28px;
+      }
+      h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Hello World</h1>
+
+  <div class="container">
+    <header>
+      <div class="avatar-placeholder">TB</div>
+      <h1>Taran Best</h1>
+      <div class="subtitle">IT Professional</div>
+    </header>
+
+    <main>
+      <div class="section-title">Connect & Contact</div>
+      <div class="links-container">
+        
+        <a href="mailto:taranbest@taranbest.com" class="btn-link">
+          <div class="link-details">
+            <span class="link-title">Email</span>
+            <span class="link-info">taranbest@taranbest.com</span>
+          </div>
+          <span class="arrow">&rarr;</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/taran-best-1b2671199" target="_blank" rel="noopener noreferrer" class="btn-link">
+          <div class="link-details">
+            <span class="link-title">LinkedIn</span>
+            <span class="link-info">linkedin.com/in/taran-best-1b2671199</span>
+          </div>
+          <span class="arrow">&rarr;</span>
+        </a>
+
+        <a href="https://github.com/taranbest" target="_blank" rel="noopener noreferrer" class="btn-link">
+          <div class="link-details">
+            <span class="link-title">GitHub</span>
+            <span class="link-info">github.com/taranbest</span>
+          </div>
+          <span class="arrow">&rarr;</span>
+        </a>
+
+      </div>
+    </main>
+
+    <footer>
+      &copy; <script>document.write(new Date().getFullYear())</script> Taran Best. All rights reserved.
+    </footer>
+  </div>
+
 </body>
 </html>
